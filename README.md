@@ -1,7 +1,6 @@
 Clases de Cloud Computing
 ======
 
-<-- Añadir badge de Travis -->
 
 ## Cloud Computing I COMO
 
@@ -18,7 +17,7 @@ Repositorio para el material específico de cada clase, planificación y ejercic
   los
   [hitos del proyecto actualizando los ficheros de hitos y haciendo un pull request](proyectos/README.md)
 * Comprueba la [metodología y criterios de evaluación](Metodología_y_criterios_de_evaluación.md)
-* Tu fichero de objetivos estará en el [directorio correspondiente](objetivos/README.md).
+
 
 
 
