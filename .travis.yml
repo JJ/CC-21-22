@@ -1,0 +1,10 @@
+branches:
+  except:
+    - gh-pages
+language: perl
+perl:
+  - "5.22"
+before_install:
+install: perl -e 'print `git diff HEAD^1 HEAD` =~ /hito/ ? "Comprobando hito":"Comprobando objetivos", "\n" '
+script: prove -c
+

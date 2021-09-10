@@ -1,0 +1,16 @@
+name: "Los nuevos objetivos deben contener al menos un URL"
+on:
+  pull_request:
+    paths:
+      - 'objetivos/*.md'
+
+jobs:
+  obtain-repo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Comprueba que los nuevos objetivos enlacen fichero"
+        uses: JJ/github-pr-contains-action@releases/v2
+        with:
+          github-token: ${{github.token}}
+          diffContains: 'https:'
+
