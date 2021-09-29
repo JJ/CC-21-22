@@ -1,9 +1,5 @@
 # Primera semana, comienza el 27 de septiembre de 2021
 
-Agradeceré que contestes
-la
-[encuesta inicial]().
-
 ## Objetivos a cubrir en la primera semana
 
 1. Entender la metodología docente, de evaluación y de interacción de la asignatura.
