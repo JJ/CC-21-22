@@ -33,12 +33,13 @@
 * Alta en [GitHub](http://github.com) y grupo de Telegram (se compartirá una hoja de cálculo donde habrá que poner ambos).
 * Introducción al software libre.
 * Sistema operativo de referencia en la asignatura: Linux.
-* Entender la mentalidad ágil, la cultura DevOps y cómo cambia la filosofía de trabajo.
+* Entender la [mentalidad ágil](http://jj.github.io/IV/preso/%C3%A1gil.html#/), la cultura DevOps y cómo cambia la filosofía de trabajo.
 * Entender cómo se hacen PRs sobre este repositorio para enviar los hitos.
   * Configurar para que siempre se haga `pull --rebase`
     [de esta forma](https://stackoverflow.com/questions/13846300/how-to-make-git-pull-use-rebase-by-default-for-all-my-repositories) o
     simplemente hacer sistemáticamente `git pull --rebase upstream
     master` cuando se actualice el *fork* local de este repositorio.
+    * Se puede hacer el PR desde el interfaz web o desde `gh`.
 * Entender los errores que se producen cuando se hace un pull request
   y cómo navegar hasta el registro de los mismos.
 
@@ -57,11 +58,12 @@ Comienza por esta
 y con
 el
 [hito 0 del proyecto](http://jj.github.io/CC/documentos/proyecto/0.Repositorio),
-cuyo plazo de entrega de este primer hito terminará el **7 de octubre
+cuyo plazo de entrega de este primer hito terminará el **5 de octubre
 a las 18:00**.
 
 > Entender bien git es un prerrequisito para esta asignatura (en
-> general, es un requisito para cualquier profesional de la informática). Se puede seguir cualquier tutorial en Internet para entenderlo.
+> general, es un requisito para cualquier profesional de la informática). Se
+> puede seguir cualquier tutorial en Internet para entenderlo.
 
 ## Siguiente semana
 

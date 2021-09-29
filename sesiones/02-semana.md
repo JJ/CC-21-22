@@ -14,12 +14,7 @@
   como arreglarlo en ese caso
   usando un squash commits con
   [`git rebase -i`](https://stackoverflow.com/questions/5189560/squash-my-last-x-commits-together-using-git).
-  * Ejemplo de arquitectura basada en eventos: [cliente Slack y Celery](https://github.com/JJ/slack-bot-platzi/blob/master/cliente-con-celery.py) + [servidor de tareas](https://github.com/JJ/slack-bot-platzi/blob/master/PlatziTareas.py).
-  * Ejemplo adicional [Gateway](https://github.com/JJ/microservices-broker/blob/master/github-server/server-with-bunny.rb) + [worker](https://github.com/JJ/microservices-broker/blob/master/github-server/worker.go) + [procesador](https://github.com/JJ/microservices-broker/blob/master/github-server/procesa.py) + [store](https://github.com/JJ/microservices-broker/blob/master/github-server/store.p6).
-* Entender que las arquitecturas basadas en microservicios necesitan servicios adicionales.
-  * Configuración remota
-  * Log
-  
+
 * Remarcar lo necesario para alcanzar el primer hito del proyecto de
   la asignatura.
 
@@ -83,9 +78,9 @@
   * A *real* project needs to have a *real* name.
 * We have repeated several times we have zero tolerance for plagiarism
   or, in general, non-autonomous work that indicates somehow that the
-  structure of the submission, or the text itself, has been carried
-  out by someone else, with essential help from someone else, directly
-  copy/pasted from someone else, or along with someone else, with
+  structure of the submission, or the text itself, has been written
+   by someone else, with essential help from someone else, directly
+  copy/pasted from somewhere, or along with someone else, with
   different submissions. If you copy or are inspired by some tutorial
   or documente, *clearly* say so, indicating the origin, and request
   non-grading of that part. Failure to do so will lead, first, to
@@ -97,7 +92,7 @@
 * Understand the basic keys of
   the
   [first milestone](http://jj.github.io/CC/documentos/proyecto/1.Infraestructura),
-  deadline Oct 27th (as it says right below).
+  deadline Oct 13th (as it says right below).
 
 ## Material para la clase
 
