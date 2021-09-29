@@ -47,12 +47,6 @@ EOC
   my $este_fichero = fichero_objetivos($user);
   ok( $este_fichero, "$user ha enviado objetivos" ); # Test 4
 
-  # Comprobar que los ha actualizado
-  my $objetivos_actualizados = objetivos_actualizados( $repo, $este_fichero );
-  is( $objetivos_actualizados, "",
-       "Fichero de objetivos $este_fichero está actualizado")
-    or skip "Fichero de objetivos actualizados hace $objetivos_actualizados" ;
-  
   my $repo_dir = "/tmp/$user-$name";
   if (!(-e $repo_dir) or  !(-d $repo_dir) ) {
     mkdir($repo_dir);
@@ -124,14 +118,6 @@ done_testing();
 sub doing {
   my $what = shift;
   diag "\n\t✔ Comprobando $what\n";
-}
-
-sub fichero_objetivos {
-  my $user = shift;
-  my @ficheros_objetivos = glob "objetivos/*.md";
-  my @enviados = map { lc } @ficheros_objetivos;
-  my $lc_user = lc $user;
-  return grep( /$lc_user/, @enviados);
 }
 
 sub check {
