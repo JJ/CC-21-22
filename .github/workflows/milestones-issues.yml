@@ -40,7 +40,7 @@ jobs:
       - name: Descarga repo usuario y decodifica configuración
         uses: actions/checkout@v2
         with:
-          repository: '${{repo}}/${{user}}'
+          repository: '${{env.repo}}/${{env.user}}'
       - name: Descarga tests
         run: |
           wget https://raw.githubusercontent.com/JJ/CC-21-22/master/src/check-hitos.t
