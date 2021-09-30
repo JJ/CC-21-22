@@ -14,8 +14,21 @@ jobs:
         with:
           github-token: ${{github.token}}
           filesChanged: 1
-      - name: Comprueba hitos e issues
-        uses: JJ/repo-in-diff-gh-action@releases/v0
+      - name: Extrae usuario y nombre del repo
+        uses: actions/github-script@v3
+        id: user_repo
+        env:
+            ACTIONS_ALLOW_UNSECURE_COMMANDS: true
         with:
-          github-token: ${{github.token}}
-          minMilestones: 3
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            const diff = process.env.diff;
+            const ghRepoMatch = /github.com\/(\S+)\/(.+?)(:\s+|\))/.exec(diff)
+            if  ( ghRepoMatch === null ) {
+                core.setFailed("❌ There's no repo URL in this diff with required format")
+            } else {
+                const user = ghRepoMatch[1] // segundo resultado
+                const repo = ghRepoMatch[2] // tercer resultado
+                console.log( "» Encontrado repo " + repo + " para usuario " + user )
+                console.log( "::set-output name=user::" + user )
+                console.log( "::set-output name=repo::" + repo )
