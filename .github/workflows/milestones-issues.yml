@@ -8,6 +8,9 @@ on:
 jobs:
   obtain-repo:
     runs-on: ubuntu-latest
+    outputs:
+      user: ${{steps.user_repo.outputs.user}}
+      repo: ${{steps.user_repo.outputs.repo}}
     steps:
       - name: Extrae URL del repositorio del diff
         uses: JJ/github-pr-contains-action@releases/v2
@@ -41,7 +44,7 @@ jobs:
       - name: Descarga repo usuario y decodifica configuración
         uses: actions/checkout@v2
         with:
-          repository: '${{env.repo}}/${{env.user}}'
+          repository: '${{env.user}}/${{env.repo}}'
       - name: Descarga tests
         run: |
           wget https://raw.githubusercontent.com/JJ/CC-21-22/master/src/check-hitos.t
