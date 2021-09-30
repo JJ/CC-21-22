@@ -17,8 +17,6 @@ jobs:
       - name: Extrae usuario y nombre del repo
         uses: actions/github-script@v3
         id: user_repo
-        env:
-            ACTIONS_ALLOW_UNSECURE_COMMANDS: true
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
@@ -32,3 +30,4 @@ jobs:
                 console.log( "» Encontrado repo " + repo + " para usuario " + user )
                 console.log( "::set-output name=user::" + user )
                 console.log( "::set-output name=repo::" + repo )
+            }
