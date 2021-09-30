@@ -2,9 +2,6 @@
 
 use Test::More;
 use Git;
-use LWP::Simple;
-use File::Slurper qw(read_text);
-use Net::Ping;
 use Term::ANSIColor qw(:constants);
 use JSON;
 
