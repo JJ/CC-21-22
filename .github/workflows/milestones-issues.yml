@@ -2,8 +2,8 @@ name: "Comprueba hitos y milestones"
 on:
   pull_request:
     paths:
-      - 'proyectos/[01234567].md'
-      - '!objetivos/*.md'
+      - "proyectos/[01234567].md"
+      - "!objetivos/*.md"
 
 jobs:
   obtain-repo:
@@ -44,9 +44,10 @@ jobs:
       - name: Descarga repo usuario y decodifica configuración
         uses: actions/checkout@v2
         with:
-          repository: '${{env.user}}/${{env.repo}}'
+          repository: "${{env.user}}/${{env.repo}}"
       - name: Descarga tests
         run: |
           wget https://raw.githubusercontent.com/JJ/CC-21-22/master/src/check-hitos.t
           mkdir t
           mv check-hitos.t t/check-hitos.t
+          prove -c
