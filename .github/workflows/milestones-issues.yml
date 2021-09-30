@@ -31,3 +31,18 @@ jobs:
                 console.log( "::set-output name=user::" + user )
                 console.log( "::set-output name=repo::" + repo )
             }
+  tests-sobre-fuentes:
+    needs: obtain-repo
+    env:
+      user: ${{ needs.obtain-repo.outputs.user }}
+      repo: ${{ needs.obtain-repo.outputs.repo }}
+    steps:
+      - name: Descarga repo usuario y decodifica configuración
+        uses: actions/checkout@v2
+        with:
+          repository: '${{repo}}/${{user}}'
+      - name: Descarga tests
+        run: |
+          wget https://raw.githubusercontent.com/JJ/CC-21-22/master/src/check-hitos.t
+          mkdir t
+          mv check-hitos.t t/check-hitos.t
