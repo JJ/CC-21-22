@@ -10,14 +10,16 @@
 
 * Remarcar lo necesario para alcanzar el primer hito del proyecto de
   la asignatura.
-
+  * Conceptos: "user journey", "user stories" o historia de usuario,
+    "milestones" o producto mínimamente viable.
 * Manejar con soltura los diferentes recursos de línea de órdenes,
   especialmente en Linux.
   * Saber manejar la historia de comandos anteriores.
   * Configurar la línea de órdenes para presentar información de
     repos.
   * Conocer permisos y cuales usar en cada momento.
-* Entender lo necesario para entregar el hito 0 del proyecto.
+* Entender lo necesario para entregar el hito 0 del proyecto si no se ha hecho.
+
 
 ## Laboratorio 5 y 7 de octubre
 
