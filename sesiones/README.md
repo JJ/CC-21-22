@@ -4,4 +4,5 @@
 necesitas ayuda. En este directorio estarán los ficheros de clase
 ordenados cronológicamente de forma inversa.
 
+* [Semana a partir del 4 de octubre de 2021](02-semana.md).
 * [Semana a partir del 27 de septiembre de 2021](01-semana.md).
