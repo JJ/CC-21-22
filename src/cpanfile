@@ -1,8 +1,0 @@
-requires "App::FatPacker";
-requires "Test::More";
-requires "Git";
-requires "LWP::Simple";
-requires "File::Slurper";
-requires "Net::Ping";
-requires "Term::ANSIColor";
-requires "JSON";
