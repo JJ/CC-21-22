@@ -1,5 +1,7 @@
 # Segunda semana, 4 de octubre de 2021
 
+Comienza el hacktoberfest, con el [material de la
+asignatura](https://github.com/JJ/CC).
 
 ## Objetivos a cubrir en esta semana
 
@@ -59,7 +61,7 @@
 y comenzar
 con
 [hito 1 del proyecto](http://jj.github.io/CC/documentos/proyecto/1.Infraestructura),
-que se entrega el 14 de octubre de 2021.
+que se entrega el 18 de octubre de 2021.
 
 ## Siguiente semana
 
