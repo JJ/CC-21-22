@@ -32,7 +32,7 @@ asignatura](https://github.com/JJ/CC).
   entenderlo, es casi imposible comprender qué son los tests y qué es lo que hay
   que probar.
 * Objetivo de la clase: enviar [el hito](http://jj.github.io/CC/documentos/proyecto/0.Repositorio) aquellos que no lo
-  hayan hecho o que quieran mejorarlo. El reenvío se podrá calificar
+  hayan hecho o que quieran mejorarlo (siempre antes de la corrección). El reenvío se podrá calificar
   sobre un punto menos.
 * Si el guión dice algo o que se evalúa algo, hay que entregar ese algo enlazándolo desde
   el `README.md`. Esto incluye:
