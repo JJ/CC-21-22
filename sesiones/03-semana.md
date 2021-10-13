@@ -1,18 +1,31 @@
 # Tercera semana, 11 de octubre de 2021
 
 Se recuerda que sigue vigente el hacktoberfest, con el [material de la
-asignatura](https://github.com/JJ/CC).
+asignatura](https://github.com/JJ/CC) recibiendo pull requests.
 
 ## Objetivos a cubrir en esta semana
 
-1. Entender metodología de diseño nativas en la nube como *domain driven design*
+1. Entender el flujo de trabajo HU → issues → mensajes de commit en un entorno
+   de desarrollo ágil
+2. Entender metodología de diseño nativa en la nube como *domain driven design*
 
 
 ## Otros objetivos
 
-* Si no hay lógica de negocio, no se podrá hacer correctamente el hito 1. En
-  caso de que se haya indicado tal cosa en la corrección, conviene corregirlo
-  para la siguiente.
+* Sobre el hito 0:
+  * Si no hay lógica de negocio, no se podrá hacer correctamente el hito 1. En
+    caso de que se haya indicado tal cosa en la corrección, conviene corregirlo
+    para la siguiente.
+  * Se trata de aplicaciones *nativas en la nube*. Deben incorporar algún
+    elemento en el que sea imprescindible usarlos.
+    * Recordatorio: [sesión dividida 5 y 7 de
+      octubre](https://github.com/JJ/CC-21-22/blob/master/sesiones/02-semana.md#laboratorio-5-y-7-de-octubre),
+      donde ya se trató el tema.
+    * *Nunca* van a ser aplicaciones para un solo usuario.
+    * Si son múltiples usuarios, o bien unos se benefician de otros o hay algún
+      otro usuario de otro tipo que se beneficie.
+  * Estos dos elementos de la aplicación tendrán que continuarse en los hitos
+    siguientes.
 
 ## Laboratorio 14 de octubre
 
