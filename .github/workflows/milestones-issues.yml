@@ -19,7 +19,7 @@ jobs:
           github-token: ${{github.token}}
           filesChanged: 1
       - name: Extrae usuario y nombre del repo
-        uses: actions/github-script@v3
+        uses: actions/github-script@v5
         id: user_repo
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
@@ -73,7 +73,7 @@ jobs:
       hito: ${{ needs.obtain-repo.outputs.objetivo }}
     steps:
       - name: Comprueba hitos en repo estudiante
-        uses: actions/github-script@v3
+        uses: actions/github-script@v5
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
