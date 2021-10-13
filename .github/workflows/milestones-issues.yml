@@ -41,7 +41,7 @@ jobs:
                 core.setFailed("❌ No parece que se haya modificado un fichero de entrega de proyecto.")
             } else {
                 const objetivo = objetivoMatch[1]
-                core.notice( "» Encontrado  hito " + objetivo )
+                core.notice( "» Encontrado hito " + objetivo )
                 core.setOutput( "objetivo", objetivo )
             }
   tests-sobre-fuentes:
@@ -73,6 +73,7 @@ jobs:
     steps:
       - name: Comprueba hitos en repo estudiante
         uses: actions/github-script@v5
+        if: ${{ env.hito >= 1 }}
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
@@ -102,6 +103,7 @@ jobs:
 
       - name: Busca historias de usuario e issues cerrados
         uses: actions/github-script@v3
+        if: ${{ env.hito >= 1 }}
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
