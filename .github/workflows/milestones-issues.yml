@@ -37,14 +37,14 @@ jobs:
                 core.setOutput( "repo" + repo )
             }
 
-            const objetivoMatch = /proyectos\/(\d+)\.md/.exec( files[0].from );
+            const objetivoMatch = /proyectos\/(\d+)\.md/.exec( JSON.parse(files)[0].from );
             if  ( objetivoMatch === null ) {
                 core.setFailed("❌ No parece que se haya modificado un fichero de entrega de proyecto.")
             } else {
                 const objetivo = objetivoMatch[1]
                 core.notice( "» Encontrado  hito " + objetivo )
                 core.setOutput( objetivo", objetivo )
-            
+
   tests-sobre-fuentes:
     runs-on: ubuntu-latest
     needs: obtain-repo
