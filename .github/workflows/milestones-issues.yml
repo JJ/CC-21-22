@@ -36,7 +36,7 @@ jobs:
                 core.setOutput( "user", user )
                 core.setOutput( "repo" + repo )
             }
-
+            console.log(" Files ", files );
             const objetivoMatch = /proyectos\/(\d+)\.md/.exec( JSON.parse(files)[0].from );
             if  ( objetivoMatch === null ) {
                 core.setFailed("❌ No parece que se haya modificado un fichero de entrega de proyecto.")
