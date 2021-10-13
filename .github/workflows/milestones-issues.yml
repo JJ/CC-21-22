@@ -34,7 +34,7 @@ jobs:
                 const repo = ghRepoMatch[2] // tercer resultado
                 core.notice( "» Encontrado repo " + repo + " para usuario " + user )
                 core.setOutput( "user", user )
-                core.setOutput( "repo" + repo )
+                core.setOutput( "repo", repo )
             }
             console.log(" Files ", files );
             const objetivoMatch = /proyectos\/(\d+)\.md/.exec( JSON.parse(files)[0].from );
