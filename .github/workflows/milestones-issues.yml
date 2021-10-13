@@ -66,10 +66,11 @@ jobs:
 
   comprueba_hito_1:
     runs-on: ubuntu-latest
-    needs: extrae_usuario_repo
+    needs: obtain-repo
     env:
       CC_USER: ${{ needs.obtain-repo.outputs.user }}
       CC_REPO: ${{ needs.obtain-repo.outputs.repo }}
+      hito: ${{ needs.obtain-repo.outputs.objetivo }}
     steps:
       - name: Comprueba hitos en repo estudiante
         uses: actions/github-script@v3
