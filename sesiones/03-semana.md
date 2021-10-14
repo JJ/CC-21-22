@@ -30,10 +30,10 @@ asignatura](https://github.com/JJ/CC) recibiendo pull requests.
 
 ## Laboratorio 14 de octubre
 
-Puesta en práctica de lo explicado antes
+Puesta en práctica de lo explicado antes en forma de práctica dirigida.
 * Clarificación de los aspectos nube.
 * Clarificación de la lógica de negocio.
-* Creación de historias de usuario.
+* Creación de historias de usuario precedidas por los *user journey*.
 * Establecimiento de productos mínimamente viables.
 * Creación de issues a partir de estas historias de usuario.
 

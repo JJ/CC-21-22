@@ -1,6 +1,6 @@
 # Cuarta semana, 18 de octubre de 2021
 
-Se recuerda que sigue vigente el hacktoberfest, con el [material de la
+Se recuerda que sigue vigente el Hacktoberfest, con el [material de la
 asignatura](https://github.com/JJ/CC) recibiendo pull requests.
 
 ## Objetivos a cubrir en esta semana
