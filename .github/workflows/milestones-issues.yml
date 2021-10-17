@@ -72,7 +72,7 @@ jobs:
       hito: ${{ needs.obtain-repo.outputs.objetivo }}
     steps:
       - name: Comprueba hitos en repo estudiante
-        uses: actions/github-script@v5
+        uses: actions/github-script@v3
         if: ${{ env.hito >= 1 }}
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
