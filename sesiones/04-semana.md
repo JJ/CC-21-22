@@ -9,6 +9,7 @@ asignatura](https://github.com/JJ/CC) recibiendo pull requests.
 
 ## Otros objetivos
 
+* Entender los errores frecuentes en el hito 1.
 
 ## Laboratorios 17-19 de octubre
 
