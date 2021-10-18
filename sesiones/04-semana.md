@@ -5,7 +5,12 @@ asignatura](https://github.com/JJ/CC) recibiendo pull requests.
 
 ## Objetivos a cubrir en esta semana
 
-
+* Entender la importancia del control de calidad en el desarrollo ágil y cómo se
+  relaciona con el resto de los aspectos del mismo.
+* Entender qué elementos de la *toolchain* empiezan a ser necesarios, y cómo
+  empezar a usarlos.
+* Entender qué posibilidades tienen los marcos y librerías relacionadas con los
+  tests y cómo elegirlos y empezar a usarlos.
 
 ## Otros objetivos
 
