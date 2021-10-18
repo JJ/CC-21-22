@@ -10,6 +10,17 @@ asignatura](https://github.com/JJ/CC) recibiendo pull requests.
 ## Otros objetivos
 
 * Entender los errores frecuentes en el hito 1.
+  * Crear los milestones no es un milestone.
+  * Los issues tienen que estar asignados a una historia de usuario que a su vez
+    esté en un milestone, y lo que se debe hacer en un milestone es exactamente
+    lo que este dice.
+  * Todos los milestones tienen que ser un producto mínimamente viable, y
+    describirlo de forma precisa como tal. Un milestone *no* es una lista de HUs
+    ni de funcionalidades ni de tareas.
+  * Las clases deben tener los atributos correctos, y de acuerdo con las
+    historias de usuario.
+  * Los productos mínimamente viables deben ser *mínimos* (es decir, no
+    programarlo (mal) todo) y *viables* (deben compilar).
 
 ## Laboratorios 17-19 de octubre
 
