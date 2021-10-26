@@ -6,6 +6,8 @@ asignatura](https://github.com/JJ/CC) recibiendo pull requests.
 ## Objetivos a cubrir en esta semana
 
 1. Entender las diferentes partes de un test y cómo se programan
+2. Entender el concepto de contenedores y cómo se usan en el desarrollo de
+   software actual.
 
 ## Otros objetivos
 
