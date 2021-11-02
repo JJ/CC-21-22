@@ -60,7 +60,7 @@ jobs:
         env:
           HITO: ${{env.objetivo}}
         run: |
-          wget https://raw.githubusercontent.com/JJ/CC-21-22/master/t/check-hitos.t
+          wget -q https://raw.githubusercontent.com/JJ/CC-21-22/master/t/check-hitos.t
           mkdir t
           mv check-hitos.t t/check-hitos.t
           prove -c

@@ -34046,7 +34046,11 @@ my $cc;
 
 eval { $cc = LoadFile("iv.yaml"); };
 
-say "Error leyendo cc.yaml: $@" unless ok( !$@, "cc.yaml leído sin problemas");
+if ( $@ ) {
+  say "Error $@ leyendo cc.yaml";
+} else {
+  ok( !$@, "cc.yaml leído sin problemas");
+}
 
 unless ( $@ ) {
   for my $k (qw(lenguaje entidad)) {
