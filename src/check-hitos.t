@@ -43,7 +43,7 @@ if ( $cc ) {
 my $entidad = $cc->{'entidad'};
 
 say "Entidad $entidad";
-ok( (ref($entidad) eq 'ARRAY') or (ref( $entidad ) eq 'SCALAR' ), "entidad en cc.yaml es del tipo correcto" );
+ok( (ref($entidad) eq 'ARRAY') or (ref( $entidad ) eq 'SCALAR' ), "Entidad en cc.yaml es del tipo correcto" );
 file_present( $entidad, \@repo_files, "entidad" );
 
 done_testing();
