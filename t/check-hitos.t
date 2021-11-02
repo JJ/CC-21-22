@@ -33729,14 +33729,22 @@ my $hito = $ENV{'HITO'};
 
 my @repo_files = $student_repo->command("ls-files");
 
-doing( "Hito 0");
+doing( "Hito 0 de $hito");
 for my $f (qw( .gitignore README.md LICENSE ) ) {
   ok grep( $f, @repo_files ), "Fichero $f presente";
 }
 
 done_testing() if $hito <= 0;
 
-doing( "Hito 1" );
+doing( "Hito 1 de $hito" );
+# Fase 2
+my ($readme_file) = grep( /^README/, @repo_files );
+my $README =  read_text( $readme_file );
+my $iv;
+
+eval { $iv = LoadFile("iv.yaml"); };
+
+ok( !$@, "cc.yaml leído sin problemas");
 
 done_testing();
 
@@ -33772,19 +33780,4 @@ sub check_ip {
   my $pinger = Net::Ping->new();
   $pinger->port_number(22); # Puerto ssh
   isnt($pinger->ping($ip), 0, "$ip es alcanzable");
-}
-
-sub objetivos_actualizados {
-  my $repo = shift;
-  my $objective_file = shift;
-  my $date = $repo->command('log', '-1', '--date=relative', '--', "$objective_file");
-  my ($hace,$unidad)= $date =~ /Date:.+?(\d+)\s+(\w+)/;
-  if ( $unidad =~ /(semana|week|minut)/ ) {
-    return "";
-  } elsif ( $unidad =~ /ho/ ) {
-    return ($hace > 1 )?"":"Objetivos actualizados demasiado recientemente";
-  } elsif ( $unidad =~ /d\w+/ ){
-    return ($hace < 7)?"":"Los objetivos no han sido actualizados en la semana anterior";
-  }
-
 }
