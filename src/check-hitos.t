@@ -4,6 +4,8 @@ use Test::More;
 use Git;
 use Term::ANSIColor qw(:constants);
 use JSON;
+
+use File::Slurper qw(read_text);
 use YAML qw(LoadFile);
 
 use v5.14; # For say
