@@ -34,11 +34,17 @@ say "Error $@ leyendo cc.yaml" unless $cc;
 
 ok( $cc, "cc.yaml leído sin problemas");
 
-unless ( $@ ) {
+if ( $cc ) {
   for my $k (qw(lenguaje entidad)) {
     ok( $cc->{$k}, "Clave $k presente en cc.yaml" );
   }
 }
+
+my $entidad = $cc->{'entidad'};
+
+say "Entidad $entidad";
+ok( (ref($entidad) eq 'ARRAY') or (ref( $entidad ) eq 'SCALAR' ), "entidad en cc.yaml es del tipo correcto" );
+
 
 done_testing();
 
