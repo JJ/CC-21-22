@@ -34042,11 +34042,16 @@ doing( "Hito 1 de $hito" );
 # Fase 2
 my ($readme_file) = grep( /^README/, @repo_files );
 my $README =  read_text( $readme_file );
-my $iv;
+my $cc;
 
-eval { $iv = LoadFile("iv.yaml"); };
+eval { $cc = LoadFile("iv.yaml"); };
 
 ok( !$@, "cc.yaml leído sin problemas");
+
+for my $k (qw(lenguaje entidad)) {
+  ok( $cc->{$k}, "Clave $k presente en cc.yaml" );
+}
+
 
 done_testing();
 
