@@ -57,8 +57,6 @@ jobs:
         with:
           repository: "${{env.user}}/${{env.repo}}"
       - name: Descarga y ejecuta tests sobre fuentes
-        env:
-          HITO: ${{env.objetivo}}
         run: |
           wget -q https://raw.githubusercontent.com/JJ/CC-21-22/master/t/check-hitos.t
           mkdir t

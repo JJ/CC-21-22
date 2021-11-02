@@ -11,7 +11,7 @@ use YAML qw(LoadFile);
 use v5.14; # For say
 
 my $student_repo = Git->repository ( Directory => '.' );
-my $hito = $ENV{'HITO'};
+my $hito = $ENV{'objetivo'};
 
 my @repo_files = $student_repo->command("ls-files");
 
@@ -28,12 +28,11 @@ my ($readme_file) = grep( /^README/, @repo_files );
 my $README =  read_text( $readme_file );
 my $cc;
 
-eval { $cc = LoadFile("iv.yaml"); };
+eval { $cc = LoadFile("cc.yaml"); };
 
-say "Error $@ leyendo cc.yaml";
+say "Error $@ leyendo cc.yaml" unless $cc;
 
-
-ok( !$@, "cc.yaml leído sin problemas");
+ok( $cc, "cc.yaml leído sin problemas");
 
 unless ( $@ ) {
   for my $k (qw(lenguaje entidad)) {
