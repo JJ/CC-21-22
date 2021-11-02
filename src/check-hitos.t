@@ -13,14 +13,14 @@ my $hito = $ENV{'HITO'};
 
 my @repo_files = $student_repo->command("ls-files");
 
-doing( "Hito 0");
+doing( "Hito 0 de $hito");
 for my $f (qw( .gitignore README.md LICENSE ) ) {
   ok grep( $f, @repo_files ), "Fichero $f presente";
 }
 
 done_testing() if $hito <= 0;
 
-doing( "Hito 1" );
+doing( "Hito 1 de $hito" );
 
 done_testing();
 
