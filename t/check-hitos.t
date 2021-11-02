@@ -34046,12 +34046,13 @@ my $cc;
 
 eval { $cc = LoadFile("iv.yaml"); };
 
-ok( !$@, "cc.yaml leído sin problemas");
+say "Error leyendo cc.yaml: $@" unless ok( !$@, "cc.yaml leído sin problemas");
 
-for my $k (qw(lenguaje entidad)) {
-  ok( $cc->{$k}, "Clave $k presente en cc.yaml" );
+unless ( $@ ) {
+  for my $k (qw(lenguaje entidad)) {
+    ok( $cc->{$k}, "Clave $k presente en cc.yaml" );
+  }
 }
-
 
 done_testing();
 
