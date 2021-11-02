@@ -57,8 +57,10 @@ jobs:
         with:
           repository: "${{env.user}}/${{env.repo}}"
       - name: Descarga tests
+        env:
+          HITO: ${{env.objetivo}}
         run: |
-          wget https://raw.githubusercontent.com/JJ/CC-21-22/master/src/check-hitos.t
+          wget https://raw.githubusercontent.com/JJ/CC-21-22/master/t/check-hitos.t
           mkdir t
           mv check-hitos.t t/check-hitos.t
           prove -c

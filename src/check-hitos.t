@@ -4,16 +4,24 @@ use Test::More;
 use Git;
 use Term::ANSIColor qw(:constants);
 use JSON;
+use YAML qw(LoadFile);
 
 use v5.14; # For say
 
 my $student_repo = Git->repository ( Directory => '.' );
+my $hito = $ENV{'HITO'};
+
 my @repo_files = $student_repo->command("ls-files");
 
 doing( "Hito 0");
 for my $f (qw( .gitignore README.md LICENSE ) ) {
   ok grep( $f, @repo_files ), "Fichero $f presente";
 }
+
+done_testing() if $hito <= 0;
+
+doing( "Hito 1" );
+
 done_testing();
 
 
