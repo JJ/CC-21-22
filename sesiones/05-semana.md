@@ -14,7 +14,7 @@ asignatura](https://github.com/JJ/CC) recibiendo pull requests.
 * Entender errores frecuentes en entrega de hitos
   * Las listas de comprobación están para algo. Lee antes de marcar, y lee lo
     que enlacen antes de marcar.
-  * Se aconseja que se entienda el concepto de pull request antes de hacerlo, el
+  * Se aconseja que se entienda el concepto de *pull request* antes de hacerlo, el
     concepto de rama en un repositorio, y las diferentes partes de las que
     consta el interfaz web de un pull request. Entender qué se está haciendo y
     qué falla cuando falla es fundamental en el entorno cloud y el desarrollo
@@ -26,7 +26,6 @@ asignatura](https://github.com/JJ/CC) recibiendo pull requests.
     la asignatura y del desarrollo software en general. El desarrollo, desde
     este hito y a partir de ahora, siempre tiene que estar justificado por las
     historias de usuario y los issues correspondientes.
-
 
 ## Contenidos
 

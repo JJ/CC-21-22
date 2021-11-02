@@ -6,6 +6,13 @@
 
 ## Otros objetivos
 
+* Entender errores frecuentes en entrega de hitos
+  * Volver a leer [los ya
+    indicados](https://github.com/JJ/CC-21-22/blob/master/sesiones/04-semana.md#otros-objetivos)
+    y
+    [aquí](https://github.com/JJ/CC-21-22/blob/master/sesiones/05-semana.md#otros-objetivos).
+  * Los issues (incluyendo HUs son problemas), el código es la solución y el
+    mensaje de commit expresa cómo se ha solucionado.
 
 ## Contenidos
 
