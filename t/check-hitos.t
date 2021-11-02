@@ -34060,7 +34060,7 @@ my $entidad = $cc->{'entidad'};
 
 say "Entidad $entidad";
 ok( (ref($entidad) eq 'ARRAY') or (ref( $entidad ) eq 'SCALAR' ), "entidad en cc.yaml es del tipo correcto" );
-
+file_present( $entidad, \@repo_files, "entidad" );
 
 done_testing();
 
@@ -34096,4 +34096,12 @@ sub check_ip {
   my $pinger = Net::Ping->new();
   $pinger->port_number(22); # Puerto ssh
   isnt($pinger->ping($ip), 0, "$ip es alcanzable");
+}
+
+sub file_present {
+  my ($file, $ls_files_ref, $name ) = @_;
+  my @files = (ref($file) eq 'ARRAY')?@$file:($file);
+  for my $file (@files ) {
+    ok( grep( /$file/, @$ls_files_ref ), "Fichero $name → $file presente" );
+  }
 }
