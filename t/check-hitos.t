@@ -1113,12 +1113,16 @@ ERROR_SIMPLE
 
 $fatpacked{"File/Slurper.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'FILE_SLURPER';
   package File::Slurper;
-  $File::Slurper::VERSION = '0.008';
+  $File::Slurper::VERSION = '0.012';
   use strict;
   use warnings;
   
   use Carp 'croak';
   use Exporter 5.57 'import';
+  
+  use Encode 2.11 qw/FB_CROAK STOP_AT_PARTIAL/;
+  use PerlIO::encoding;
+  
   our @EXPORT_OK = qw/read_binary read_text read_lines write_binary write_text read_dir/;
   
   sub read_binary {
@@ -1150,10 +1154,7 @@ $fatpacked{"File/Slurper.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'FI
   	my ($encoding, $crlf) = @_;
   	$crlf = CRLF_DEFAULT if $crlf && $crlf eq 'auto';
   
-  	if ($encoding =~ /^(latin|iso-8859-)1$/i) {
-  		return $crlf ? ':unix:crlf' : ':raw';
-  	}
-  	elsif (HAS_UTF8_STRICT && $encoding =~ /^utf-?8\b/i) {
+  	if (HAS_UTF8_STRICT && $encoding =~ /^utf-?8\b/i) {
   		return $crlf ? ':unix:utf8_strict:crlf' : ':unix:utf8_strict';
   	}
   	else {
@@ -1166,9 +1167,8 @@ $fatpacked{"File/Slurper.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'FI
   	my ($filename, $encoding, $crlf) = @_;
   	$encoding ||= 'utf-8';
   	my $layer = _text_layers($encoding, $crlf);
-  	return read_binary($filename) if $layer eq ':raw';
   
-  	local $PerlIO::encoding::fallback = 1;
+  	local $PerlIO::encoding::fallback = STOP_AT_PARTIAL | FB_CROAK;
   	open my $fh, "<$layer", $filename or croak "Couldn't open $filename: $!";
   	return do { local $/; <$fh> };
   }
@@ -1178,7 +1178,7 @@ $fatpacked{"File/Slurper.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'FI
   	$encoding ||= 'utf-8';
   	my $layer = _text_layers($encoding, $crlf);
   
-  	local $PerlIO::encoding::fallback = 1;
+  	local $PerlIO::encoding::fallback = STOP_AT_PARTIAL | FB_CROAK;
   	open my $fh, ">$layer", $filename or croak "Couldn't open $filename: $!";
   	print $fh $_[1] or croak "Couldn't write to $filename: $!";
   	close $fh or croak "Couldn't write to $filename: $!";
@@ -1186,7 +1186,11 @@ $fatpacked{"File/Slurper.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'FI
   }
   
   sub write_binary {
-  	return write_text(@_[0,1], 'latin-1');
+  	my $filename = $_[0];
+  	open my $fh, ">:raw", $filename or croak "Couldn't open $filename: $!";
+  	print $fh $_[1] or croak "Couldn't write to $filename: $!";
+  	close $fh or croak "Couldn't write to $filename: $!";
+  	return;
   }
   
   sub read_lines {
@@ -1194,7 +1198,7 @@ $fatpacked{"File/Slurper.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'FI
   	$encoding ||= 'utf-8';
   	my $layer = _text_layers($encoding, $crlf);
   
-  	local $PerlIO::encoding::fallback = 1;
+  	local $PerlIO::encoding::fallback = STOP_AT_PARTIAL | FB_CROAK;
   	open my $fh, "<$layer", $filename or croak "Couldn't open $filename: $!";
   	return <$fh> if $skip_chomp;
   	my @buf = <$fh>;
@@ -1225,7 +1229,7 @@ $fatpacked{"File/Slurper.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'FI
   
   =head1 VERSION
   
-  version 0.008
+  version 0.012
   
   =head1 SYNOPSIS
   
@@ -1234,7 +1238,7 @@ $fatpacked{"File/Slurper.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'FI
   
   =head1 DESCRIPTION
   
-  This module provides functions for fast and correct slurping and spewing. All functions are optionally exported.
+  This module provides functions for fast and correct slurping and spewing. All functions are optionally exported. All functions throw exceptions on errors, write functions don't return any meaningful value.
   
   =head1 FUNCTIONS
   
@@ -1284,7 +1288,7 @@ $fatpacked{"File/Slurper.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'FI
   
   =item * L<File::Slurp|File::Slurp>
   
-  This is previous generation file slurping module. It has a number of issues, as described L<here|http://blogs.perl.org/users/leon_timmermans/2015/08/fileslurp-is-broken-and-wrong.html>
+  This is a previous generation file slurping module. It has a number of issues, as described L<here|http://blogs.perl.org/users/leon_timmermans/2015/08/fileslurp-is-broken-and-wrong.html>.
   
   =item * L<File::Slurp::Tiny|File::Slurp::Tiny>
   
