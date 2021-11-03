@@ -3,9 +3,10 @@
 
 ## Objetivos a cubrir en esta semana
 
+* Entender cómo los contenedores encajan dentro del sistema de desarrollo ágil.
+* Entender diferentes casos de uso de los contenedores.
 
 ## Otros objetivos
-
 
 
 * Entender errores frecuentes en entrega de hitos
@@ -21,6 +22,9 @@
 
 ## Contenidos
 
+* [Como examinar la estructura de un
+  contenedor](http://jj.github.io/CC/documentos/temas/Contenedores.html#usando-dockerfiles)
+* Como trabajar interactivamente dentro de un contenedor para depurarlo.
 
 ## Laboratorio, 2 de noviembre de 2021
 
