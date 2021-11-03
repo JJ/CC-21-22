@@ -19,7 +19,20 @@
   * Como los hitos son PMVs, no puede haber un hito de "organización" ni de
     "organizar hitos". Los hitos que se entregan en clase corresponderán en
     general a hitos del proyecto del estudiante... Salvo este, claro.
-
+* Errores frecuentes hito 2
+  * Lista de gestores de tareas arbitraria.
+  * No tener lógica de negocio en el código, que por tanto no puede ser
+    testeada.
+  * No justificar la biblioteca de aseciones.
+  * No justificar el marco de pruebas.
+  * No poner un verdadero gestor de tareas, sino un gestor de dependencias sin
+    mencionarlo explícitamente.
+  * No elegir previamente un estilo de aserciones (normal o BDD) y justificar la
+    elección con respecto a eso.
+  * No comentar la elección de nada en relación a las posibilidades que hay.
+  * No se debe NUNCA cerrar dos issues en un solo commit.
+  * Se deben usar buenas prácticas en los commits.
+  
 ## Contenidos
 
 * [Como examinar la estructura de un
