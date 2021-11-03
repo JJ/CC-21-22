@@ -6,13 +6,18 @@
 
 ## Otros objetivos
 
+
+
 * Entender errores frecuentes en entrega de hitos
   * Volver a leer [los ya
     indicados](https://github.com/JJ/CC-21-22/blob/master/sesiones/04-semana.md#otros-objetivos)
     y
     [aquí](https://github.com/JJ/CC-21-22/blob/master/sesiones/05-semana.md#otros-objetivos).
-  * Los issues (incluyendo HUs son problemas), el código es la solución y el
+  * Los issues (incluyendo HUs) son problemas, el código es la solución y el
     mensaje de commit expresa cómo se ha solucionado.
+  * Como los hitos son PMVs, no puede haber un hito de "organización" ni de
+    "organizar hitos". Los hitos que se entregan en clase corresponderán en
+    general a hitos del proyecto del estudiante... Salvo este, claro.
 
 ## Contenidos
 
@@ -24,11 +29,13 @@
   [iv-test](https://hub.docker.com/r/jjmerelo/iv-test).
 
 
-## Material para la clase
+## Material para la clase y fechas de entrega
 
 Termina el plazo de entrega del [hito
 2](http://jj.github.io/CC/documentos/proyecto/2.Tests). Fecha de entrega: **2 de
-noviembre de 2021**.
+noviembre de 2021**. Si se entrega más tarde, pasará al plazo de entrega
+extraordinario y no habrá posibilidad de volver a entregarlo en caso de que no
+se haya superado el hito.
 
 Comienza el plazo de entrega del [hito
 3](http://jj.github.io/CC/documentos/proyecto/3.Docker.html). Fecha de entrega:
