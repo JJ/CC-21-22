@@ -35,16 +35,29 @@ say "Error $@ leyendo cc.yaml" unless $cc;
 ok( $cc, "cc.yaml leído sin problemas");
 
 if ( $cc ) {
-  for my $k (qw(lenguaje entidad)) {
+  ok( $cc->{'entidad'}, "Clave entidad presente en cc.yaml" );
+}
+
+
+my $entidad = $cc->{'entidad'};
+
+say "Entidad «$entidad»";
+ok( (ref($entidad) eq 'ARRAY') or (ref( $entidad ) eq 'SCALAR' ), "Entidad en cc.yaml es del tipo correcto" );
+file_present( $entidad, \@repo_files, "entidad" ) if $entidad;
+
+done_testing() if $hito <= 1;
+
+doing( "Hito 2 de $hito" );
+if ( $cc ) {
+  for my $k (qw(lenguaje test fichero_tareas)) {
     ok( $cc->{$k}, "Clave $k presente en cc.yaml" );
   }
 }
 
-my $entidad = $cc->{'entidad'};
+for my $k (qw( fichero_tareas test ) ) {
+  file_present( $cc->{$k}, \@repo_files, $k  ) if $cc->{$k};
+}
 
-say "Entidad $entidad";
-ok( (ref($entidad) eq 'ARRAY') or (ref( $entidad ) eq 'SCALAR' ), "Entidad en cc.yaml es del tipo correcto" );
-file_present( $entidad, \@repo_files, "entidad" );
 
 done_testing();
 
