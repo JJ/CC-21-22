@@ -30,9 +30,9 @@
   * No elegir previamente un estilo de aserciones (normal o BDD) y justificar la
     elección con respecto a eso.
   * No comentar la elección de nada en relación a las posibilidades que hay.
-  * No se debe NUNCA cerrar dos issues en un solo commit.
+  * No se debe NUNCA cerrar varios issues en un solo commit.
   * Se deben usar buenas prácticas en los commits.
-  
+
 ## Contenidos
 
 * [Como examinar la estructura de un
@@ -45,6 +45,18 @@
   [Raku](https://hub.docker.com/r/jjmerelo/alpine-raku),
   [iv-test](https://hub.docker.com/r/jjmerelo/iv-test).
 
+## Laboratorio, 4 de noviembre de 2021
+
+Resolución de dudas hito 2 e hito 3, comprobación de errores frecuentes hito 2,
+iniciación del hito 3. Recordatorio
+
+* El hito 3 debe incluir un producto mínimamente viable/hito en el repo del
+  estudiante que incluya la infraestructura virtual creada.
+* Todo el desarrollo de código, inclusive infraestructura como código, debe
+  hacerse con issues asignados al hito correspondiente. En este caso no tiene
+  necesariamente que haber una historia de usuario de la que salga ese issue
+  (aunque si en este punto hace falta alguna funcionalidad, o sobre todo
+  dependencia, que sea esencial, habrá que incluir ese enlace).
 
 ## Material para la clase y fechas de entrega
 
