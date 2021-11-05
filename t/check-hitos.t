@@ -42008,7 +42008,7 @@ for my $f (qw( .gitignore README.md LICENSE ) ) {
   ok grep( $f, @repo_files ), "Fichero $f presente";
 }
 
-done_testing() if $hito <= 0;
+termina() if $hito <= 0;
 
 doing( "Hito 1 de $hito" );
 # Fase 2
@@ -42029,11 +42029,11 @@ if ( $cc ) {
 
 my $entidad = $cc->{'entidad'};
 
-say "Entidad $entidad";
+say "Entidad «$entidad»";
 ok( (ref($entidad) eq 'ARRAY') or (ref( $entidad ) eq 'SCALAR' ), "Entidad en cc.yaml es del tipo correcto" );
 file_present( $entidad, \@repo_files, "entidad" ) if $entidad;
 
-done_testing() if $hito <= 1;
+termina() if $hito <= 1;
 
 doing( "Hito 2 de $hito" );
 if ( $cc ) {
@@ -42054,6 +42054,11 @@ done_testing();
 sub doing {
   my $what = shift;
   diag "\n\t✔ Comprobando $what\n";
+}
+
+sub termina {
+  done_testing();
+  exit;
 }
 
 sub check {
