@@ -14,7 +14,7 @@ asignatura](https://github.com/JJ/CC) recibiendo pull requests.
 * Entender errores frecuentes en entrega de hitos
   * Las listas de comprobación están para algo. Lee antes de marcar, y lee lo
     que enlacen antes de marcar.
-  * Se aconseja que se entienda el concepto de pull request antes de hacerlo, el
+  * Se aconseja que se entienda el concepto de *pull request* antes de hacerlo, el
     concepto de rama en un repositorio, y las diferentes partes de las que
     consta el interfaz web de un pull request. Entender qué se está haciendo y
     qué falla cuando falla es fundamental en el entorno cloud y el desarrollo
@@ -27,15 +27,20 @@ asignatura](https://github.com/JJ/CC) recibiendo pull requests.
     este hito y a partir de ahora, siempre tiene que estar justificado por las
     historias de usuario y los issues correspondientes.
 
-
 ## Contenidos
 
 * [Desarrollo basado en
   pruebas](http://jj.github.io/CC/documentos/temas/Desarrollo_basado_en_pruebas.html).
 
-## Laboratorio, 26 y 28 de octubre de 2021
+## Laboratorio, 26 de octubre de 2021
 
 * [Presentación sobre los tests](https://jj.github.io/IV/preso/tests.html).
+
+## Laboratorio, 28 de octubre de 2021
+
+* Ejemplos de contenedores:
+  [Raku](https://hub.docker.com/r/jjmerelo/alpine-raku),
+  [iv-test](https://hub.docker.com/r/jjmerelo/iv-test).
 
 ## Material para la clase
 

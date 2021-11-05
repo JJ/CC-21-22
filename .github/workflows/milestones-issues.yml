@@ -56,12 +56,12 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: "${{env.user}}/${{env.repo}}"
-      - name: Descarga tests
+      - name: Descarga y ejecuta tests sobre fuentes
         run: |
-          wget https://raw.githubusercontent.com/JJ/CC-21-22/master/src/check-hitos.t
+          wget -q https://raw.githubusercontent.com/JJ/CC-21-22/master/t/check-hitos.t
           mkdir t
           mv check-hitos.t t/check-hitos.t
-          prove -c
+          prove -c -v
 
   comprueba_hito_1:
     runs-on: ubuntu-latest
