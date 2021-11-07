@@ -28,7 +28,11 @@
 
 ## Laboratorio 5 y 7 de octubre
 
-* Objetivo de la clase: volver a enviar [el hito](http://jj.github.io/CC/documentos/proyecto/0.Repositorio) aquellos que no lo
+* El hito 0 debe explicar claramente
+  * Qué problema se trata de resolver.
+  * Qué lógica de negocio aporta la solución para resolver el problema.
+* El README.md nunca debe incluir la palabra Hito
+* Objetivo de la clase:  enviar [el hito](http://jj.github.io/CC/documentos/proyecto/0.Repositorio) aquellos que no lo
   hayan hecho, que quieran subir nota o que lo hayan suspendido. El reenvío se calificará
   sobre un punto menos, hasta un máximo de 9.
 * Si el guión dice algo o que se evalúa algo, hay que entregar ese algo enlazándolo desde
