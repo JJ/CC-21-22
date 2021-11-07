@@ -1,6 +1,5 @@
 # Sexta semana, 2 de noviembre de 2021
 
-
 ## Objetivos a cubrir en esta semana
 
 * Entender cómo los contenedores encajan dentro del sistema de desarrollo ágil.
