@@ -11,6 +11,7 @@ jobs:
     outputs:
       user: ${{steps.user_repo.outputs.user}}
       repo: ${{steps.user_repo.outputs.repo}}
+      objetivo: ${{steps.user_repo.outputs.objetivo}}
     steps:
       - name: Extrae URL del repositorio del diff
         uses: JJ/github-pr-contains-action@releases/v2
@@ -18,21 +19,30 @@ jobs:
           github-token: ${{github.token}}
           filesChanged: 1
       - name: Extrae usuario y nombre del repo
-        uses: actions/github-script@v3
+        uses: actions/github-script@v5
         id: user_repo
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
             const diff = process.env.diff;
+            const files = process.env.files
             const ghRepoMatch = /github.com\/(\S+)\/(.+?)(:\s+|\))/.exec(diff)
             if  ( ghRepoMatch === null ) {
                 core.setFailed("❌ There's no repo URL in this diff with required format")
             } else {
                 const user = ghRepoMatch[1] // segundo resultado
                 const repo = ghRepoMatch[2] // tercer resultado
-                console.log( "» Encontrado repo " + repo + " para usuario " + user )
-                console.log( "::set-output name=user::" + user )
-                console.log( "::set-output name=repo::" + repo )
+                core.notice( "» Encontrado repo " + repo + " para usuario " + user )
+                core.setOutput( "user", user )
+                core.setOutput( "repo", repo )
+            }
+            const objetivoMatch = /proyectos\/(\d+)\.md/.exec( JSON.parse(files)[0].from );
+            if  ( objetivoMatch === null ) {
+                core.setFailed("❌ No parece que se haya modificado un fichero de entrega de proyecto.")
+            } else {
+                const objetivo = objetivoMatch[1]
+                core.notice( "» Encontrado hito " + objetivo )
+                core.setOutput( "objetivo", objetivo )
             }
   tests-sobre-fuentes:
     runs-on: ubuntu-latest
@@ -40,14 +50,108 @@ jobs:
     env:
       user: ${{ needs.obtain-repo.outputs.user }}
       repo: ${{ needs.obtain-repo.outputs.repo }}
+      objetivo: ${{ needs.obtain-repo.outputs.objetivo }}
     steps:
       - name: Descarga repo usuario y decodifica configuración
         uses: actions/checkout@v2
         with:
           repository: "${{env.user}}/${{env.repo}}"
-      - name: Descarga tests
+      - name: Descarga y ejecuta tests sobre fuentes
         run: |
-          wget https://raw.githubusercontent.com/JJ/CC-21-22/master/src/check-hitos.t
+          wget -q https://raw.githubusercontent.com/JJ/CC-21-22/master/t/check-hitos.t
           mkdir t
           mv check-hitos.t t/check-hitos.t
-          prove -c
+          prove -c -v
+
+  comprueba_hito_1:
+    runs-on: ubuntu-latest
+    needs: obtain-repo
+    env:
+      CC_USER: ${{ needs.obtain-repo.outputs.user }}
+      CC_REPO: ${{ needs.obtain-repo.outputs.repo }}
+      hito: ${{ needs.obtain-repo.outputs.objetivo }}
+    steps:
+      - name: Comprueba hitos en repo estudiante
+        uses: actions/github-script@v3
+        if: ${{ env.hito >= 1 }}
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+              const user = process.env.CC_USER
+              const repo = process.env.CC_REPO
+              console.log( "» Trabajando con el repo " + repo + " para el usuario " + user )
+              const milestones = await github.issues.listMilestones( { owner: user, repo: repo } )
+              if ( ! milestones.data.length ) {
+                  core.setFailed("❌ Tiene que haber por lo menos un milestone")
+              }
+              const minMilestones = 3
+              if ( minMilestones && milestones.data.length < minMilestones ) {
+                  core.setFailed( "❌ Tendría que haber más de " + minMilestones + " milestone(s)");
+              }
+              var totalIssues = 0
+              var totalClosedIssues = 0
+              milestones.data.forEach( async function( milestone ) {
+                  totalIssues += milestone.open_issues + milestone.closed_issues
+                  totalClosedIssues += milestone.closed_issues
+              })
+              console.log( "✅ Hay " + totalIssues + " issues en tus milestones y " + totalClosedIssues + " cerrados ")
+              if ( ! totalIssues ) {
+                  core.setFailed( "❌ No hay ningún issue en tus milestones")
+              } else if ( ! totalClosedIssues ) {
+                  core.setFailed( "❌ No hay ningún issue cerrado milestones")
+              }
+
+      - name: Busca historias de usuario e issues cerrados
+        uses: actions/github-script@v3
+        if: ${{ env.hito >= 1 }}
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            const user = process.env.CC_USER
+            const repo = process.env.CC_REPO
+            console.log( "» Analizando repo " + repo + " del usuario 🔥" + user )
+            const non_paginated_issues = await github.issues.listForRepo.endpoint.merge( { owner: user, repo: repo, state: 'all' })
+            const issues = await github.paginate( non_paginated_issues )
+            const user_stories = issues.filter( issue => issue.labels.filter( label => label.name === "user-stories" ).length > 0 && ( issue.title.includes('HU') || issue.title.includes('US') ) && issue.milestone )
+            if ( user_stories.length > 0 ) {
+              console.log( " ✅ Hay al menos una historia de usuario " )
+            } else {
+              core.setFailed( " ❌ No hay ninguna historia de usuario en el repo " )
+            }
+            const closed_issues = issues.filter( issue => issue.state === "closed" )
+            closed_issues.forEach( async function( issue ) {
+              if ( ! issue.pull_request ) {
+                        const query = `query($owner:String!, $name:String!, $issue:Int!) {
+                            repository(name: $name , owner: $owner  ) {
+                              issue(number: $issue) {
+                                timelineItems(itemTypes: CLOSED_EVENT, last: 1) {
+                                  nodes {
+                                    ... on ClosedEvent {
+                                      closer {
+                                        __typename
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }`;
+
+                const variables = {
+                          owner: user,
+                          name: repo,
+                          issue: issue.number
+                          }
+                const result = await github.graphql(query, variables)
+                if ( result.repository.issue.timelineItems.nodes[0].closer != null ) {
+                  const closingEvent = result.repository.issue.timelineItems.nodes[0].closer.__typename
+                  if ( (closingEvent == 'Commit') || (closingEvent == 'PullRequest') ) {
+                                console.log(" ✅ El issue " + issue.number + " se cerró con un " + closingEvent )
+                  } else {
+                                core.setFailed( "❌ El issue " + issue.number + " no se cerró con un commit o PR")
+                  }
+                } else {
+                    core.setFailed( "❌ El issue " + issue.number + " no se cerró con un commit o PR")
+                }
+              }
+            })

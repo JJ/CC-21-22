@@ -1,6 +1,6 @@
 # Metodología y criterios de evaluación
 
-Los criterios generales que figuran en la [guía docente](http://grados.ugr.es/informatica/pages/infoacademica/guias_docentes/201516/cuarto/tecnologiasdelainformacion/infraestructuravirtual) son los siguientes:
+Los criterios generales que figuran en la [guía docente](https://masteres.ugr.es/ingenieria-informatica/docencia/plan-estudios/guia-docente/M50/56/2/9) son los siguientes:
 
 * No hay diferencia entre parte "teórica" y "práctica". Durante el
   curso hay que ir entregando diferentes hitos de un proyecto. Estos
