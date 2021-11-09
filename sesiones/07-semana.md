@@ -1,6 +1,5 @@
 # Séptima semana, 8 de noviembre de 2021
 
-
 ## Objetivos a cubrir en esta semana
 
 * Entender cómo optimizar un contenedor dependiendo de las circunstancias.
@@ -53,4 +52,4 @@ hasta el **25 de noviembre de 2021**.
 
 ## Siguiente semana
 
-[Séptima semana, 9 de noviembre](07-semana.md)
+[Octava semana, 15 de noviembre](08-semana.md)
