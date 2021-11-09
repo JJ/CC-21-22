@@ -23,8 +23,11 @@
 
 ## Contenidos
 
+* Aprender la importancia de los tags y su papel en los sistemas de publicación
+  actuales.
 * Cómo configurar un sistema de integración continua para subir contenedores a
-  Docker.
+  Docker. [Ejemplo en el manual de GitHub
+  actions](https://docs.github.com/es/actions/publishing-packages/publishing-docker-images).
 
 
 ## Laboratorio, 9 de noviembre de 2021
