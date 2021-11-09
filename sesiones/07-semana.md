@@ -23,6 +23,9 @@
 
 ## Contenidos
 
+* Cómo configurar un sistema de integración continua para subir contenedores a
+  Docker.
+
 
 ## Laboratorio, 9 de noviembre de 2021
 
