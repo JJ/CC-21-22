@@ -26,12 +26,21 @@
 
 ## Laboratorio, 9 de noviembre de 2021
 
-Resolución de dudas hito 2 e hito 3, comprobación de [errores frecuentes hito
+
+* Organización del desarrollo de un proyecto informático.
+  * ¿Qué son los *user journey*?
+  * ¿Qué son las *historias de usario*? ¿Cómo se organizan y se priorizan?
+  * ¿Cómo pasar de las historias de usuario al desarrollo de un producto
+    mínimamente viable? Desarrollo en hitos.
+  * ¿Qué es un issue?
+  * ¿Cómo trasladar un issue a código y cómo referirse a él?
+  * Mejores prácticas en mensajes de commit.
+* Resolución de dudas hito 2 e hito 3, comprobación de [errores frecuentes hito
 2](06-semana.md#otros-objetivos), continuación del hito 3. Recordatorio
 
-* El hito 3 debe incluir un producto mínimamente viable/hito en el repo del
+    * El hito 3 debe incluir un producto mínimamente viable/hito en el repo del
   estudiante que incluya la infraestructura virtual creada.
-* Todo el desarrollo de código, inclusive infraestructura como código, debe
+  * Todo el desarrollo de código, inclusive infraestructura como código, debe
   hacerse con issues asignados al hito correspondiente. En este caso no tiene
   necesariamente que haber una historia de usuario de la que salga ese issue
   (aunque si en este punto hace falta alguna funcionalidad, o sobre todo
