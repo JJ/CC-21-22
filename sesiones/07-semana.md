@@ -54,6 +54,8 @@
 
 ## Material para la clase y fechas de entrega
 
+Presentación [CI](https://jj.github.io/IV/preso/CI.html).
+
 Termina el plazo de entrega extraordinario del [hito
 2](http://jj.github.io/CC/documentos/proyecto/2.Tests), **14 de noviembre de 2021**.
 
