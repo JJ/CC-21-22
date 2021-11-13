@@ -6,3 +6,5 @@ requires "File::Slurper";
 requires "Net::Ping";
 requires "Term::ANSIColor";
 requires "JSON";
+requires "YAML";
+requires "GitHub::Actions";
