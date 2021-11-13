@@ -9,6 +9,11 @@
 
 
 * Entender errores frecuentes en entrega de hitos
+  * Hito 2 (mirar también los [errores indicados anteriormente](06-semana.md#otros-objetivos):
+	* Poner lo primero que aparezca en Google buscando "frameworks xx" o "biblioteca de aserciones xx" sin tratar de entender si corresponde a lo que se ha explicado en la asignatura como biblioteca de aserciones o marco de tests, y por supuesto sólo con el objetivo de cubrir el expediente en vez de tomar una decisión técnica.
+	* ¿Unittest es un marco de pruebas?
+	* No distinguir entre bibliotecas BDD y de aserciones.
+	* Dejad de usar requirements.txt en 2021.
 
 
 ## Contenidos
