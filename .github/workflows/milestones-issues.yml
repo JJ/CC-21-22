@@ -56,6 +56,9 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: "${{env.user}}/${{env.repo}}"
+      - name: Saca información de los fuentes
+        run: |
+          wget -q https://raw.githubusercontent.com/JJ/CC-21-22/master/.github/workflows/get-info | perl
       - name: Descarga y ejecuta tests sobre fuentes
         run: |
           wget -q https://raw.githubusercontent.com/JJ/CC-21-22/master/t/check-hitos.t
