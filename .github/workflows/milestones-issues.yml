@@ -62,7 +62,7 @@ jobs:
       - name: Testea contenedor
         if: ${{env.objetivo >= 3}}
         env:
-          CONTAINER: ${{ env.docker_user }}/${{ env.repo }}
+          CONTAINER: ${{ env.DOCKER_USER }}/${{ env.repo }}
         run: docker run -t -v `pwd`:/test ${CONTAINER,,}
       - name: Descarga y ejecuta tests sobre fuentes
         run: |
