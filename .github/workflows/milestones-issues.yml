@@ -58,7 +58,8 @@ jobs:
           repository: "${{env.user}}/${{env.repo}}"
       - name: Saca información de los fuentes
         run: |
-          wget -q https://raw.githubusercontent.com/JJ/CC-21-22/master/.github/workflows/get-info | perl
+          wget -q https://raw.githubusercontent.com/JJ/CC-21-22/master/.github/workflows/get-info
+          perl get-info
       - name: Testea contenedor
         if: ${{env.objetivo >= 3}}
         env:
