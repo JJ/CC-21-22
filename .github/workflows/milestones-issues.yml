@@ -59,6 +59,11 @@ jobs:
       - name: Saca información de los fuentes
         run: |
           wget -q https://raw.githubusercontent.com/JJ/CC-21-22/master/.github/workflows/get-info | perl
+      - name: Testea contenedor
+        if: ${{env.objetivo >= 3}}
+        env:
+          CONTAINER: ${{ env.docker_user }}/${{ env.repo }}
+        run: docker run -t -v `pwd`:/test ${CONTAINER,,}
       - name: Descarga y ejecuta tests sobre fuentes
         run: |
           wget -q https://raw.githubusercontent.com/JJ/CC-21-22/master/t/check-hitos.t
