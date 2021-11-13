@@ -4,9 +4,10 @@ use strict;
 use warnings;
 use v5.14;
 
-use Github::Actions;
+use GitHub::Actions;
 use YAML;
 
+print %ENV;
 if ( -f "DOCKER_USER" ) {
   say "❢ Usuario de Docker alternativo";
   open( my $fh, "<", "DOCKER_USER" ) || die "No puedo abrir DOCKER_USER";
