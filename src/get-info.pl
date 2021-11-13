@@ -5,7 +5,7 @@ use warnings;
 use v5.14;
 
 use GitHub::Actions;
-use YAML;
+use YAML qw(LoadFile);
 
 if ( -f "DOCKER_USER" ) {
   say "❢ Usuario de Docker alternativo";
