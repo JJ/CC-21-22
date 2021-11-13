@@ -7,7 +7,6 @@ use v5.14;
 use GitHub::Actions;
 use YAML;
 
-print %ENV;
 if ( -f "DOCKER_USER" ) {
   say "❢ Usuario de Docker alternativo";
   open( my $fh, "<", "DOCKER_USER" ) || die "No puedo abrir DOCKER_USER";
@@ -23,9 +22,9 @@ if ( -f "DOCKER_USER" ) {
 my $cc;
 eval { $cc = LoadFile("cc.yaml"); };
 if ($@) {
-  set_failed( sorry( "Hay algún problema leyendo «cc.yaml» ⤷ $@" ) );
+  set_failed( "Hay algún problema leyendo «cc.yaml» ⤷ $@" );
 } else {
-  say all_good( "Fichero de configuración ⚙ «cc.yaml» encontrado" );
+  info "Fichero de configuración ⚙ «cc.yaml» encontrado";
   if ( $cc->{'make'} ) {
     set_output( 'CC_ORDEN_TAREAS', $cc->{'make'});
     set_env( 'CC_ORDEN_TAREAS', $cc->{'make'});
