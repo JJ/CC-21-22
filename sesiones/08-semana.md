@@ -17,6 +17,8 @@ Comienza el plazo de entrega del [hito
 4, integración continua](https://jj.github.io/CC/documentos/proyecto/4.CI),
 hasta el **25 de noviembre de 2021**.
 
+Entender [CI](https://jj.github.io/IV/preso/CI.html).
+
 ## Material para la clase y fechas de entrega
 
 Continúa el plazo de entrega del [hito
