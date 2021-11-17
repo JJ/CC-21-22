@@ -27,6 +27,8 @@
 
 ## Contenidos
 
+Vamos a ver los flujos de CI que se usan en la asignatura y en el material de la
+misma.
 
 ## Laboratorio, 16 de noviembre de 2021
 
@@ -35,6 +37,8 @@ Comienza el plazo de entrega del [hito
 hasta el **25 de noviembre de 2021**.
 
 Entender [CI](https://jj.github.io/IV/preso/CI.html).
+
+## Laboratorio, 18 de noviembre de 2021
 
 ## Material para la clase y fechas de entrega
 
