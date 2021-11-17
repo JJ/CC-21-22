@@ -4,6 +4,7 @@
 
 * Entender el concepto de CI
 * Entender diferentes casos de uso de CI.
+* Entender la importancia de la programación defensiva y el código limpio.
 
 ## Otros objetivos
 
@@ -29,6 +30,8 @@
 
 Vamos a ver los flujos de CI que se usan en la asignatura y en el material de la
 misma.
+
+Adicionalmente, [código limpio](https://jj.github.io/curso-tdd/temas/a-programar.html).
 
 ## Laboratorio, 16 de noviembre de 2021
 
