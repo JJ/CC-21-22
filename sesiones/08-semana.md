@@ -53,4 +53,4 @@ hasta el **25 de noviembre de 2021**.
 
 ## Siguiente semana
 
-[Octava semana, 15 de noviembre](09-semana.md)
+[Novena semana, 22 de noviembre](09-semana.md)
