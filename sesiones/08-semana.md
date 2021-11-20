@@ -43,6 +43,8 @@ Entender [CI](https://jj.github.io/IV/preso/CI.html).
 
 ## Laboratorio, 18 de noviembre de 2021
 
+Entender los [servicios avanzados en la web](https://jj.github.io/curso-tdd/preso/servicios.html).
+
 ## Material para la clase y fechas de entrega
 
 Continúa el plazo de entrega del [hito
