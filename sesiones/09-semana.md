@@ -24,6 +24,10 @@ Continúa el plazo de entrega del [hito
 4, integración continua](https://jj.github.io/CC/documentos/proyecto/4.CI),
 hasta el **25 de noviembre de 2021**.
 
+Comienza el plazo de entrega del [hito
+5](http://jj.github.io/CC/documentos/proyecto/5.Microservicio.html), hasta el
+**16 de diciembre**.
+
 ## Siguiente semana
 
 [Décima semana, 22 de noviembre](10-semana.md)
