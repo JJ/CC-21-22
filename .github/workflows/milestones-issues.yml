@@ -198,7 +198,7 @@ jobs:
             if ( travis_checks_green.length == 0 ) {
               const circle_checks_green = green_checks.filter( check => check.app.slug === "circle-ci" )
               if ( circle_checks_green.length == 0 ) {
-                core.setFailed("❌ Travis y Circle no están o está fallando en este momento")
+                core.setFailed("❌ Travis y Circle o no están o está fallando en este momento")
               }
             } else {
               console.log( "✅ Entre ellos está Travis" )
