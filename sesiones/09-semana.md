@@ -2,6 +2,10 @@
 
 ## Objetivos a cubrir en esta semana
 
+* Entender los conceptos de separación de capas.
+* Entender qué es un [API
+  REST](http://jj.github.io/CC/documentos/temas/REST.html) y cómo se diseña.
+* Entender qué es un servicio REST y cómo encaja con el resto de la estructura.
 
 ## Otros objetivos
 
@@ -30,4 +34,4 @@ Comienza el plazo de entrega del [hito
 
 ## Siguiente semana
 
-[Décima semana, 22 de noviembre](10-semana.md)
+[Décima semana, 29 de noviembre](10-semana.md)
