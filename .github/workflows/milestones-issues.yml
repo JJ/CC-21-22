@@ -192,6 +192,7 @@ jobs:
             } else {
               console.log( "✅ Hay " + green_checks.length + " que pasa(n) los tests correctamente" )
             }
+            console.log("CIs en verde ", green_checks );
             const travis_checks_green = green_checks.filter( check => check.app.slug === "travis-ci" )
 
             if ( travis_checks_green.length == 0 ) {
