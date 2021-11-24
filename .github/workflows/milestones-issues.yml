@@ -163,3 +163,42 @@ jobs:
                 }
               }
             })
+
+      - name: Comprueba el estado de CI
+        if: ${{ env.hito >= 4 }}
+        uses: actions/github-script@v3
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            const user = process.env.CC_USER
+            const repo = process.env.CC_REPO
+            console.log( "» Analizando repo " + repo + " del usuario 🔥" + user )
+            const checks_before_pag =
+                    await github.checks.listForRef.endpoint.merge(
+                        { owner: user,
+                          repo: repo,
+                          ref: 'HEAD',
+                          status: 'completed'
+                        })
+            const checks = await github.paginate( checks_before_pag)
+            console.log( "✅ Hay " + checks.length + " sistemas de CI configurados")
+
+            if ( checks.length < 1 ) {
+                    core.setFailed("❌ No hay suficientes sistemas de CI configurados")
+            }
+            const green_checks = checks.filter( check => check.conclusion === "success" )
+            if ( !green_checks.length ) {
+              core.setFailed("❌ No hay al menos un CI que esté en verde")
+            } else {
+              console.log( "✅ Hay " + green_checks.length + " que pasa(n) los tests correctamente" )
+            }
+            const travis_checks_green = green_checks.filter( check => check.app.slug === "travis-ci" )
+
+            if ( travis_checks_green.length == 0 ) {
+              const circle_checks_green = green_checks.filter( check => check.app.slug === "circle-ci" )
+              if ( circle_checks_green.length == 0 ) {
+                core.setFailed("❌ Travis y Circle no están o está fallando en este momento")
+              }
+            } else {
+              console.log( "✅ Entre ellos está Travis" )
+            }
