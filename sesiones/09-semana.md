@@ -2,6 +2,11 @@
 
 ## Objetivos a cubrir en esta semana
 
+* Entender los conceptos de separación de capas.
+* Entender qué es un [API
+  REST](http://jj.github.io/CC/documentos/temas/REST.html) y cómo se diseña.
+* Conocer las [buenas prácticas en el diseño de un servicio con API REST](http://jj.github.io/CC/documentos/temas/REST#buenos-usos-de-las-peticiones).
+* Entender qué es un servicio REST y cómo encaja con el resto de la estructura.
 
 ## Otros objetivos
 
@@ -13,6 +18,12 @@ Entender errores frecuentes hito 3 (aparte de los indicados en la sesión anteri
 
 Entender los [servicios avanzados en la
 web](https://jj.github.io/IV/preso/servicios.html).
+
+## Laboratorio, 24 de noviembre de 2021
+
+Buenas prácticas en el [diseño de las rutas de un
+API](http://jj.github.io/CC/documentos/temas/REST#buenos-usos-en-el-dise%C3%B1o-de-un-api)
+junto con ejemplos.
 
 ## Material para la clase y fechas de entrega
 
@@ -30,4 +41,4 @@ Comienza el plazo de entrega del [hito
 
 ## Siguiente semana
 
-[Décima semana, 22 de noviembre](10-semana.md)
+[Décima semana, 29 de noviembre](10-semana.md)
