@@ -4,6 +4,17 @@ Bienvenida a la nueva profesora de la asignatura, Dra. Claudia Villalonga.
 
 ## Errores frecuentes hito 3 y anteriores
 
+* No entender por qué se pide una justificación de la elección de la imagen base
+  y en general no entender que si se quiere justificar algo, lo tienes que
+  justificar evaluándolos *en las mismas condiciones*. En este caso, ¿para qué
+  es el contenedor? ¿Cómo queremos que sea y qué queremos que haga? Se hace
+  pruebas con varios contenedores base con los criterios que se establezcan, y
+  escogemos el mejor.
+* No editar ni entender los workflow que se usan para subir a GitHub
+  * No filtrar cambios para que sólo se lancen cuando cambian los ficheros
+    usados.
+  * No evitar pasos que no usamos.
+  * Poner pasos que realmetne luego no usamos.
 * El target para tests es `test`, no `tests`.
 * No usar el gestor de dependencias para instalar las dependencias a pesar de
   estar instalado.
