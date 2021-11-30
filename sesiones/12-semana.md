@@ -29,20 +29,6 @@ conjunta).
 * No testear las diferentes versiones de los lenguajes de programación,
   especialmente las versiones en desarrollo actual.
 
-## Material de clase conjunta
-
-Ejemplos de programación de un microservicio [en
-Python](http://jj.github.io/CC/documentos/temas/Microservicios#ejemplo-en-python)
-y en
-[node](http://jj.github.io/CC/documentos/temas/Microservicios#ejemplos-en-node).
-
-## Laboratorio, 30 de noviembre de 2021
-
-Buenas prácticas en el [diseño de las rutas de un
-API](http://jj.github.io/CC/documentos/temas/REST#buenos-usos-en-el-dise%C3%B1o-de-un-api)
-junto con ejemplos.
-
-
 ## Siguiente semana
 
 [Undécima semana, 6 de diciembre](11-semana.md)
