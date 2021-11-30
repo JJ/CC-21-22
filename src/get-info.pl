@@ -19,14 +19,18 @@ if ( -f "DOCKER_USER" ) {
   set_env( 'DOCKER_USER', $ENV{'user'} );
 }
 
+
+my $CONF_FILE_NAME = "cc.yaml";
 my $cc;
-eval { $cc = LoadFile("cc.yaml"); };
-if ($@) {
-  set_failed( "Hay algún problema leyendo «cc.yaml» ⤷ $@" );
-} else {
-  warning "Fichero de configuración ⚙ «cc.yaml» encontrado";
-  if ( $cc->{'make'} ) {
-    set_output( 'CC_ORDEN_TAREAS', $cc->{'make'});
-    set_env( 'CC_ORDEN_TAREAS', $cc->{'make'});
+if ( -f $CONF_FILE_NAME ) {
+  eval { $cc = LoadFile( $CONF_FILE_NAME ); };
+  if ($@) {
+    set_failed( "Hay algún problema leyendo «$CONF_FILE_NAME» ⤷ $@" );
+  } else {
+    warning "Fichero de configuración ⚙ «$CONF_FILE_NAME» encontrado";
+    if ( $cc->{'make'} ) {
+      set_output( 'CC_ORDEN_TAREAS', $cc->{'make'});
+      set_env( 'CC_ORDEN_TAREAS', $cc->{'make'});
+    }
   }
 }
