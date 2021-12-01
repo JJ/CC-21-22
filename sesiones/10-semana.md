@@ -52,6 +52,23 @@ junto con ejemplos.
 
 ## Laboratorio, 2 de diciembre
 
+Cómo [testear aplicaciones en la
+nube](http://jj.github.io/CC/documentos/temas/Microservicios#probando-nuestra-aplicaci%C3%B3n-en-la-nube).
+
+[Tests de integración para
+microservicios](https://jj.github.io/curso-tdd/temas/integraci%C3%B3n.html);
+[otro ejemplo en
+Python](https://github.com/JJ/tests-python/blob/master/HitosIV/tests/starlitos_test.py).
+
+## Fechas de entrega
+
+Continúa el plazo extraordinario del [hito
+4, integración continua](https://jj.github.io/CC/documentos/proyecto/4.CI),
+hasta el **4 de diciembre de 2021**.
+
+Plazo de entrega del [hito
+5](http://jj.github.io/CC/documentos/proyecto/5.Microservicio.html), hasta el
+**16 de diciembre**.
 
 ## Siguiente semana
 
