@@ -2,6 +2,11 @@
 
 Bienvenida a la nueva profesora de la asignatura, Dra. Claudia Villalonga (clase
 conjunta).
+## Objetivos
+
+* Entender las buenas prácticas en el diseño de un API
+* Entender como integrar los servicios comunes en un microservicio en el mismo a
+  través de *middleware*.
 
 ## Errores frecuentes hito 3 y anteriores
 
@@ -31,7 +36,10 @@ conjunta).
 
 ## Material de clase conjunta
 
-Ejemplos de programación de un microservicio [en
+* Entender [las buenas prácticas en el diseño de
+rutas](http://jj.github.io/CC/documentos/temas/REST#buenos-usos-de-las-peticiones).
+
+* Ejemplos de programación de un microservicio [en
 Python](http://jj.github.io/CC/documentos/temas/Microservicios#ejemplo-en-python)
 y en
 [node](http://jj.github.io/CC/documentos/temas/Microservicios#ejemplos-en-node).
@@ -41,6 +49,8 @@ y en
 Buenas prácticas en el [diseño de las rutas de un
 API](http://jj.github.io/CC/documentos/temas/REST#buenos-usos-en-el-dise%C3%B1o-de-un-api)
 junto con ejemplos.
+
+## Laboratorio, 2 de diciembre
 
 
 ## Siguiente semana
