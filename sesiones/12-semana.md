@@ -1,34 +1,23 @@
-# Décima semana, comienza 29 de noviembre de 2021
+# Duodécima semana, comienza 13 de diciembre de 2021
 
-Bienvenida a la nueva profesora de la asignatura, Dra. Claudia Villalonga (clase
-conjunta).
 
-## Errores frecuentes hito 3 y anteriores
+## Laboratorio, 14 de diciembre
 
-* No entender por qué se pide una justificación de la elección de la imagen base
-  y en general no entender que si se quiere justificar algo, lo tienes que
-  justificar evaluándolos *en las mismas condiciones*. En este caso, ¿para qué
-  es el contenedor? ¿Cómo queremos que sea y qué queremos que haga? Se hace
-  pruebas con varios contenedores base con los criterios que se establezcan, y
-  escogemos el mejor.
-* No editar ni entender los workflow que se usan para subir a GitHub
-  * No filtrar cambios para que sólo se lancen cuando cambian los ficheros
-    usados.
-  * No evitar pasos que no usamos.
-  * Poner pasos que realmetne luego no usamos.
-* El target para tests es `test`, no `tests`.
-* No usar el gestor de dependencias para instalar las dependencias a pesar de
-  estar instalado.
-* Uso de steps arbitrarios en los workflow que actualizan la imagen Docker, o no
-  uso de filtros adecuados que hagan build sólo si ocurre algo determinado.
+Cómo [testear aplicaciones en la
+nube](http://jj.github.io/CC/documentos/temas/Microservicios#probando-nuestra-aplicaci%C3%B3n-en-la-nube).
 
-## Errores frecuentes en hito 4
+[Tests de integración para
+microservicios](https://jj.github.io/curso-tdd/temas/integraci%C3%B3n.html);
+[otro ejemplo en
+Python](https://github.com/JJ/tests-python/blob/master/HitosIV/tests/starlitos_test.py).
 
-* Falta de enlaces al fichero correspondiente.
-* Poca documentación sobre cada uno de los pasos.
-* No testear las diferentes versiones de los lenguajes de programación,
-  especialmente las versiones en desarrollo actual.
+
+## Fechas de entrega
+
+Plazo de entrega del [hito
+5](http://jj.github.io/CC/documentos/proyecto/5.Microservicio.html), hasta el
+**17 de diciembre**.
 
 ## Siguiente semana
 
-[Undécima semana, 6 de diciembre](11-semana.md)
+[Décimo tercera semana, 20 de diciembre](13-semana.md)

@@ -68,7 +68,7 @@ hasta el **4 de diciembre de 2021**.
 
 Plazo de entrega del [hito
 5](http://jj.github.io/CC/documentos/proyecto/5.Microservicio.html), hasta el
-**16 de diciembre**.
+**17 de diciembre**.
 
 ## Siguiente semana
 

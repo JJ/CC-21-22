@@ -3,8 +3,7 @@
 
 ## Objetivos
 
-* Entender el concepto de despliegue
-* Entender los servicios necesarios para lleva a cabo un despliegue.
+Comenzar a ver los conceptos del último hito.
 
 ## Laboratorio día 7
 
