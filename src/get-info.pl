@@ -29,8 +29,12 @@ if ( -f $CONF_FILE_NAME ) {
   } else {
     warning "Fichero de configuración ⚙ «$CONF_FILE_NAME» encontrado";
     if ( $cc->{'make'} ) {
-      set_output( 'CC_ORDEN_TAREAS', $cc->{'make'});
-      set_env( 'CC_ORDEN_TAREAS', $cc->{'make'});
+      if (ref($cc->{'make'}) eq 'ARRAY' ) {
+        set_failed( "«make» debe ser un valor simple, no un ARRAY" );
+      } else {
+        set_output( 'CC_ORDEN_TAREAS', $cc->{'make'});
+        set_env( 'CC_ORDEN_TAREAS', $cc->{'make'});
+      }
     }
   }
 }
