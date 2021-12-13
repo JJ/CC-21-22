@@ -14,7 +14,13 @@
 
 ## Fechas de entrega
 
+Plazo extraordinario de entrega del [hito 5](http://jj.github.io/CC/documentos/proyecto/5.Microservicio.html),
+hasta el **15 de enero de 2022**.
+
+Plazo de entrega del [hito 6](https://jj.github.io/CC/documentos/proyecto/6.Compose.html), hasta el
+**28 de enero de 2022** (último día del periodo lectivo).
+
 
 ## Siguiente semana
 
-[Decimocuarta semana, 10 de enero](14-semana.md)
+[Decimocuarta semana, 10 de enero de 2022](14-semana.md)
