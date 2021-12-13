@@ -66,6 +66,8 @@ jobs:
         run: docker run -t -v `pwd`:/app/test ${CONTAINER,,}
       - name: Ejecuta test del microservicio
         if: ${{ env.objetivo >= 4 }}
+        env:
+          CONTAINER: ${{ env.DOCKER_USER }}/${{ env.repo }}
         run: |
           docker run -t -v `pwd`:/app/test ${CONTAINER,,} sh -c "ls && ${CC_ORDEN_TAREAS} build && ${CC_ORDEN_TAREAS} install && ${CC_ORDEN_TAREAS} test"
       - name: Descarga y ejecuta tests sobre fuentes
