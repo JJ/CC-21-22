@@ -3,7 +3,7 @@
 
 ## Material de clase conjunta
 
-* Continuación con la [Composicion_de_contenedores](http://jj.github.io/CC/documentos/temas/Composicion_de_contenedores)
+* Seminario online y preguntas a través del grupo de Telegram
 
 
 ## Laboratorio, 21 de diciembre
